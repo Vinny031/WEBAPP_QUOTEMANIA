@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import QuoteCard from './components/QuoteCard/QuoteCard';
 import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
+import Podium from './components/Podium/Podium';
 import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
@@ -41,13 +42,27 @@ function App() {
   };
 
   const handlePlayersConfigured = (configuredPlayers) => {
-    setPlayers(configuredPlayers);
+    const playersWithScore = configuredPlayers.map(player => ({
+      ...player,
+      score: 0
+    }));
+    setPlayers(playersWithScore);
   };
 
   const handleSelectDifficulty = (newDifficulty) => {
     setDifficulty(newDifficulty);
   };
 
+  const handlePlayerClick = (index) => {
+    setPlayers(prevPlayers => 
+      prevPlayers.map((player, i) => 
+        i === index 
+          ? { ...player, score: player.score + 1 } 
+          : player
+      )
+    );
+  };
+  
   useEffect(() => {
     setRandomQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
   }, []);
@@ -76,11 +91,12 @@ function App() {
             </div>
             <div className="game-info">
               <p>Difficulté : {difficultyName}</p>
-              <PlayerAvatars players={players} />
+              <PlayerAvatars players={players} onPlayerClick={handlePlayerClick} />
             </div>
           </>
         )}
       </div>
+      <Podium players={players} />
     </div>
   );
 }

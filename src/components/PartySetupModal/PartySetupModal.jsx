@@ -19,7 +19,12 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
 
   const handleChange = (index, field, value) => {
     const updatedPlayers = [...players];
-    updatedPlayers[index][field] = value;
+    if (field === 'name') {
+      // Capitaliser la première lettre du nom
+      updatedPlayers[index][field] = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+    } else {
+      updatedPlayers[index][field] = value;
+    }
     setPlayers(updatedPlayers);
   };
 

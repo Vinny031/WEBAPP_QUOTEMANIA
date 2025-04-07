@@ -1,24 +1,29 @@
 import React from 'react';
 import { Avatar } from '@mui/material';
-import './PlayerAvatars.scss'; // Importer ton fichier de style
+import './PlayerAvatars.scss';
 
-// Composant réutilisable pour afficher les avatars
-const PlayerAvatars = ({ players }) => {
+const PlayerAvatars = ({ players, onPlayerClick }) => {
   return (
     <div className="player-avatars">
       {players.map((player, index) => (
-        <Avatar
+        <div
           key={index}
-          sx={{
-            bgcolor: player.color,
-            fontSize: '1.2rem',
-            width: 40,
-            height: 40,
-            marginRight: '8px',
-          }}
+          className="player-avatar"
+          onClick={() => onPlayerClick(index)}
         >
-          {player.name?.[0].toUpperCase()}
-        </Avatar>
+          <Avatar
+            sx={{
+              bgcolor: player.color,
+              fontSize: '1.2rem',
+              width: 50,
+              height: 50,
+              cursor: 'pointer',
+            }}
+          >
+            {player.name?.[0].toUpperCase()}
+          </Avatar>
+          <span className="player-score">Score : {player.score ?? 0}</span>
+        </div>
       ))}
     </div>
   );
