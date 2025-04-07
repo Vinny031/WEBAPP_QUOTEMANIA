@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import './DifficultySelector.scss';
 
 const DifficultySelector = () => {
   const [difficulty, setDifficulty] = useState('');
@@ -9,7 +10,7 @@ const DifficultySelector = () => {
   };
 
   return (
-    <FormControl fullWidth>
+    <FormControl>
       <InputLabel id="difficulty-label">Difficulté</InputLabel>
       <Select
         labelId="difficulty-label"

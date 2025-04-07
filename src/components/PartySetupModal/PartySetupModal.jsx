@@ -42,20 +42,29 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
   };
 
   const handleSubmit = () => {
+    // Vérification si tous les joueurs ont un pseudo
     if (players.some(player => player.name.trim() === '')) {
       alert("Tous les pseudos doivent être remplis.");
       return;
     }
+
+    // Vérification si une difficulté a été sélectionnée
+    if (!difficulty) {
+      alert("Veuillez sélectionner une difficulté.");
+      return;
+    }
+
+    // Soumettre les données
     onSubmit(players, difficulty);
     onDifficultyChange(difficulty);
     onClose();
-};
+  };
 
   return (
     <Modal open={open} onClose={onClose}>
       <Box className="modal-box">
         <div className="modal-header">
-          <h2>Qui c'est qui joue ?</h2>
+          <h2 className='modal-title'>Qui c'est qui joue ?</h2>
           <FormControl fullWidth>
             <InputLabel id="difficulty-label">Difficulté</InputLabel>
             <Select
