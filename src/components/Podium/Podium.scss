@@ -1,0 +1,53 @@
+.podium {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .podium h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .podium-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .podium-item {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .podium-item-1 {
+    color: gold;
+  }
+  
+  .podium-item-2 {
+    color: silver;
+  }
+  
+  .podium-item-3 {
+    color: #cd7f32;
+  }
+  
+  .podium-rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .podium-player {
+    font-size: 1.2rem;
+  }
+  
+  .podium-score {
+    font-size: 1rem;
+  }
+  

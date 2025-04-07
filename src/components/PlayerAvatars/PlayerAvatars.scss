@@ -1,9 +1,19 @@
 .player-avatars {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 10px;
-    gap: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.player-avatar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-score {
+  font-size: 0.9rem;
+  color: #333;
+}
