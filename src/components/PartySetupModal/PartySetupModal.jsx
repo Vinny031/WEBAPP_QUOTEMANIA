@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, Box, TextField, MenuItem, IconButton } from '@mui/material';
+import { Modal, Box, TextField, MenuItem, IconButton, FormControl, InputLabel, Select } from '@mui/material';
 import CustomButton from '../CustomButton/CustomButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
 import './PartySetupModal.scss';
 
 const colors = [
@@ -11,11 +10,12 @@ const colors = [
   '#2196f3', '#1976d2', '#ba68c8', '#9c27b0', '#bdbdbd', '#616161', '#000000'
 ];
 
-const PartySetupModal = ({ open, onClose, onSubmit }) => {
+const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
   const [players, setPlayers] = useState([
     { name: '', color: colors[0] },
     { name: '', color: colors[1] },
   ]);
+  const [difficulty, setDifficulty] = useState('');
 
   const handleChange = (index, field, value) => {
     const updatedPlayers = [...players];
@@ -34,19 +34,46 @@ const PartySetupModal = ({ open, onClose, onSubmit }) => {
     setPlayers(updatedPlayers);
   };
 
+  const handleDifficultyChange = (event) => {
+    setDifficulty(event.target.value);
+    if (onDifficultyChange) {
+      onDifficultyChange(event.target.value);
+    }
+  };
+
   const handleSubmit = () => {
     if (players.some(player => player.name.trim() === '')) {
       alert("Tous les pseudos doivent être remplis.");
       return;
     }
-    onSubmit(players);
+    onSubmit(players, difficulty);
+    onDifficultyChange(difficulty);
     onClose();
-  };
+};
 
   return (
     <Modal open={open} onClose={onClose}>
       <Box className="modal-box">
-        <h2>Qui c'est qui joue ?</h2>
+        <div className="modal-header">
+          <h2>Qui c'est qui joue ?</h2>
+          <FormControl fullWidth>
+            <InputLabel id="difficulty-label">Difficulté</InputLabel>
+            <Select
+              labelId="difficulty-label"
+              id="difficulty-select"
+              value={difficulty}
+              label="Difficulté"
+              onChange={handleDifficultyChange}
+            >
+              <MenuItem value={1}>Facile</MenuItem>
+              <MenuItem value={2}>Moyenne</MenuItem>
+              <MenuItem value={3}>Difficile</MenuItem>
+              <MenuItem value={4}>Maitre</MenuItem>
+              <MenuItem value={5}>Toutes</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+
         {players.map((player, index) => (
           <div key={index} className="player-row">
             <TextField
@@ -78,11 +105,11 @@ const PartySetupModal = ({ open, onClose, onSubmit }) => {
             </IconButton>
           </div>
         ))}
+
         <CustomButton
-          label={<><AddIcon /> Ajouter quelqu'un</>}
+          label="Ajouter quelqu'un"
           onClick={handleAddPlayer}
           disabled={players.length >= colors.length}
-          className="add-player-button"
         />
         <CustomButton
           label="Let's go !"
