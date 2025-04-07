@@ -1,0 +1,20 @@
+.custom-button {
+  background-color: #6200ea !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 12px rgba(98, 0, 234, 0.3) !important;
+  transition: all 0.3s ease-in-out !important;
+
+  &:hover {
+    background-color: #3700b3 !important;
+    box-shadow: 0 6px 16px rgba(55, 0, 179, 0.4) !important;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

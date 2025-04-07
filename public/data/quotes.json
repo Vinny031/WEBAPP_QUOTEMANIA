@@ -1,0 +1,32 @@
+[
+  {
+    "citation": "Ce n’est pas parce que tu as la capacité de faire quelque chose que tu es obligé de le faire.",
+    "film": "Harry Potter et le Prisonnier d'Azkaban",
+    "personnage": "Dumbledore",
+    "annee": 2004
+  },
+  {
+    "citation": "Tu meurs en héros, ou tu vis assez longtemps pour te voir devenir le méchant.",
+    "film": "The Dark Knight",
+    "personnage": "Harvey Dent",
+    "annee": 2008
+  },
+  {
+    "citation": "Ce que nous faisons dans notre vie résonne dans l’éternité.",
+    "film": "Gladiator",
+    "personnage": "Maximus",
+    "annee": 2000
+  },
+  {
+    "citation": "Ne pense pas que c’est l’air que tu respires maintenant.",
+    "film": "Matrix",
+    "personnage": "Morpheus",
+    "annee": 1999
+  },
+  {
+    "citation": "L’amour est la seule chose qu’on perçoit qui transcende le temps et l’espace.",
+    "film": "Interstellar",
+    "personnage": "Dr Brand",
+    "annee": 2014
+  }
+]
