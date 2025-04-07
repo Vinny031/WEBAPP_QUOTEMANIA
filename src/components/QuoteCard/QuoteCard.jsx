@@ -4,12 +4,12 @@ import {useEffect } from 'react';
 const QuoteCard = ({ quote, flipped, setFlipped }) => {
 
   const handleClick = () => {
-    setFlipped(!flipped);  // Change l'état du flip lorsqu'on clique
+    setFlipped(!flipped);
   };
 
   useEffect(() => {
-    setFlipped(false);  // Réinitialise le flip au chargement de la citation
-  }, [quote, setFlipped]);  // Réinitialise le flip chaque fois que la citation change
+    setFlipped(false);
+  }, [quote, setFlipped]);
 
   return (
     <div className={`quote-card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>

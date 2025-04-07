@@ -1,7 +1,7 @@
 .quote-card {
   width: 300px;
   height: 450px;
-  perspective: 1000px;  // Perspective 3D pour l'effet de flip
+  perspective: 1000px;
   cursor: pointer;
   margin: 20px auto;
   border-radius: 10px;
@@ -11,7 +11,7 @@
   .quote-card-inner {
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease;  // Transition fluide pour le flip
+    transition: transform 0.8s ease;
     transform-style: preserve-3d;
     position: relative;
     border-radius: 10px;
@@ -25,14 +25,14 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;  // Cache la face arrière lorsqu'elle n'est pas visible
+    backface-visibility: hidden;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);  // Ombre interne pour l'effet de relief
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
     background-color: #f8f8f8;
   }
 
@@ -51,7 +51,7 @@
   .quote-card-back {
     background-color: #f4f4f4;
     color: #555;
-    transform: rotateY(180deg);  // Permet de cacher la face avant lors du flip
+    transform: rotateY(180deg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +64,6 @@
   // Effet au survol
   &:hover {
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);  // Agrandir légèrement la carte au survol
+    transform: scale(1.05);
   }
 }
