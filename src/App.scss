@@ -8,15 +8,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 
   .main-content {
     display: flex;
-    justify-content: space-between; /* Aligner les éléments avec de l'espace entre */
-    align-items: flex-start; /* Alignement au début de la ligne */
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    max-width: 1200px; /* Limite la largeur à 1200px */
-    gap: 2rem; /* Espacement entre les colonnes */
+    gap: 5rem;
   }
 
   .quote-card-container {
@@ -24,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 5rem;
   }
 
   .game-info {

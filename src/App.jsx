@@ -62,17 +62,24 @@ function App() {
         players={players}
         difficulty={difficulty}
       />
+      <h1>QUOTE MANIA 🎬</h1>
       <div className="main-content">
-        <div className="quote-card-container">
-          <h1>Citation Mystère 🎬</h1>
-          <QuoteCard quote={randomQuote} flipped={flipped} setFlipped={setFlipped} />
-          <CustomButton onClick={changeQuote} label="Nouvelle citation" />
-        </div>
-
-        <div className="game-info">
-          <p>Difficulté : {difficultyName}</p>
-          <PlayerAvatars players={players} />
-        </div>
+        {(players.length === 0 || !difficulty) ? (
+          <div className="game-warning">
+            <p>⚠️ Veuillez configurer les joueurs et sélectionner une difficulté pour commencer la partie.</p>
+          </div>
+        ) : (
+          <>
+            <div className="quote-card-container">
+              <QuoteCard quote={randomQuote} flipped={flipped} setFlipped={setFlipped} />
+              <CustomButton onClick={changeQuote} label="Nouvelle citation" />
+            </div>
+            <div className="game-info">
+              <p>Difficulté : {difficultyName}</p>
+              <PlayerAvatars players={players} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
