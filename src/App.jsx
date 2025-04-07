@@ -5,11 +5,25 @@ import CustomButton from './components/CustomButton/CustomButton';
 import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
+// Tableau des niveaux de difficulté avec la valeur et le nom
+const difficultyLevels = [
+  { value: 1, name: 'Facile' },
+  { value: 2, name: 'Moyenne' },
+  { value: 3, name: 'Difficile' },
+  { value: 4, name: 'Maitre' },
+  { value: 5, name: 'Toutes' }
+];
+
 function App() {
   const [randomQuote, setRandomQuote] = useState(null);
   const [flipped, setFlipped] = useState(false);
   const [players, setPlayers] = useState([]);
-  const [difficulty, setDifficulty] = useState("Facile");
+  const [difficulty, setDifficulty] = useState(null);
+
+  // Mappage de la difficulté : trouver le nom de la difficulté à partir de la value
+  const difficultyName = difficulty 
+    ? difficultyLevels.find(level => level.value === difficulty)?.name 
+    : 'Non définie';
 
   const getRandomQuote = (currentQuote) => {
     let newQuote;
@@ -31,13 +45,8 @@ function App() {
     setPlayers(configuredPlayers);
   };
 
-  const handleSelectDifficulty = () => {
-    const selectedDifficulty = prompt("Choisissez la difficulté : Facile, Moyen, Difficile");
-    if (selectedDifficulty && ["Facile", "Moyen", "Difficile"].includes(selectedDifficulty)) {
-      setDifficulty(selectedDifficulty);
-    } else {
-      alert("Veuillez choisir une difficulté valide.");
-    }
+  const handleSelectDifficulty = (newDifficulty) => {
+    setDifficulty(newDifficulty);
   };
 
   useEffect(() => {
@@ -51,6 +60,8 @@ function App() {
       <Header
         onPlayersConfigured={handlePlayersConfigured}
         onSelectDifficulty={handleSelectDifficulty}
+        players={players}
+        difficulty={difficulty}
       />
       <h1>Citation Mystère 🎬</h1>
       <QuoteCard quote={randomQuote} flipped={flipped} setFlipped={setFlipped} />
@@ -64,7 +75,7 @@ function App() {
             </li>
           ))}
         </ul>
-        <p>Difficulté : {difficulty}</p>
+        <p>Difficulté : {difficultyName}</p>
       </div>
     </div>
   );

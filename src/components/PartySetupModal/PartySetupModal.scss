@@ -13,6 +13,41 @@
     flex-direction: column;
     gap: 16px;
   }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .difficulty-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .difficulty-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  
+    &.selected {
+      background-color: #2196f3;  // Couleur bleue pour le niveau sélectionné
+      color: white;
+    }
+  
+    &:hover {
+      background-color: #cccccc; // Légère couleur au survol
+    }
+  }
   
 .player-row {
   display: flex;
