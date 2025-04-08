@@ -9,11 +9,11 @@ import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
 const difficultyLevels = [
-  { value: 1, name: 'Facile' },
-  { value: 2, name: 'Moyenne' },
-  { value: 3, name: 'Difficile' },
-  { value: 4, name: 'Maitre' },
-  { value: 5, name: 'Toutes' }
+  { value: 1, name: '🟢 Facile' },
+  { value: 2, name: '🟡 Moyenne' },
+  { value: 3, name: '🟠 Difficile' },
+  { value: 4, name: '🔴 Maître' },
+  { value: 5, name: '🎲 Aléatoire' }
 ];
 
 function App() {

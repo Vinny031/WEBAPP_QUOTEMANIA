@@ -79,11 +79,11 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
               label="Difficulté"
               onChange={handleDifficultyChange}
             >
-              <MenuItem value={1}>Facile</MenuItem>
-              <MenuItem value={2}>Moyenne</MenuItem>
-              <MenuItem value={3}>Difficile</MenuItem>
-              <MenuItem value={4}>Maitre</MenuItem>
-              <MenuItem value={5}>Toutes</MenuItem>
+              <MenuItem value={1}>🟢 Facile</MenuItem>
+              <MenuItem value={2}>🟡 Moyenne</MenuItem>
+              <MenuItem value={3}>🟠 Difficile</MenuItem>
+              <MenuItem value={4}>🔴 Maître</MenuItem>
+              <MenuItem value={5}>🎲 Aléatoire</MenuItem>
             </Select>
           </FormControl>
         </div>
