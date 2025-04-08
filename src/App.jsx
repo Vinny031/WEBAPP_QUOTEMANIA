@@ -5,7 +5,6 @@ import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
 import Podium from './components/Podium/Podium';
 import Footer from './components/Footer/Footer';
-import ResetButton from './components/ResetButton/ResetButton';  // Importer le composant ResetButton
 import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
@@ -22,6 +21,33 @@ function App() {
   const [flipped, setFlipped] = useState(false);
   const [players, setPlayers] = useState([]);
   const [difficulty, setDifficulty] = useState(null);
+
+  // Charger les données à partir du localStorage au démarrage
+  useEffect(() => {
+    const savedPlayers = JSON.parse(localStorage.getItem('players'));
+    const savedDifficulty = localStorage.getItem('difficulty');
+    const savedQuote = JSON.parse(localStorage.getItem('randomQuote'));
+
+    if (savedPlayers) setPlayers(savedPlayers);
+    if (savedDifficulty) setDifficulty(savedDifficulty);
+    if (savedQuote) setRandomQuote(savedQuote);
+    else {
+      setRandomQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
+    }
+  }, []);
+
+  // Sauvegarder les données dans le localStorage chaque fois qu'elles changent
+  useEffect(() => {
+    if (players.length > 0) {
+      localStorage.setItem('players', JSON.stringify(players));
+    }
+    if (difficulty) {
+      localStorage.setItem('difficulty', difficulty);
+    }
+    if (randomQuote) {
+      localStorage.setItem('randomQuote', JSON.stringify(randomQuote));
+    }
+  }, [players, difficulty, randomQuote]);
 
   const difficultyName = difficulty 
     ? difficultyLevels.find(level => level.value === difficulty)?.name 
@@ -68,11 +94,10 @@ function App() {
   const resetGame = () => {
     setPlayers([]);
     setDifficulty(null);
+    localStorage.removeItem('players');
+    localStorage.removeItem('difficulty');
+    localStorage.removeItem('randomQuote');
   };
-
-  useEffect(() => {
-    setRandomQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
-  }, []);
 
   if (!randomQuote) return <div>Loading...</div>;
 
