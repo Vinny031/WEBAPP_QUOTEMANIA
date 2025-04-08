@@ -4,7 +4,8 @@ import QuoteCard from './components/QuoteCard/QuoteCard';
 import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
 import Podium from './components/Podium/Podium';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import ResetButton from './components/ResetButton/ResetButton';  // Importer le composant ResetButton
 import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
@@ -63,7 +64,12 @@ function App() {
       )
     );
   };
-  
+
+  const resetGame = () => {
+    setPlayers([]);
+    setDifficulty(null);
+  };
+
   useEffect(() => {
     setRandomQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
   }, []);
@@ -77,6 +83,7 @@ function App() {
         onSelectDifficulty={handleSelectDifficulty}
         players={players}
         difficulty={difficulty}
+        resetGame={resetGame}
       />
       <h1>QUOTE MANIA 🎬</h1>
       <section className="main-content">
@@ -101,7 +108,6 @@ function App() {
       <Footer />
     </div>
   );
-  
 }
 
 export default App;
