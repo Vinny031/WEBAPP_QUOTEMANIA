@@ -12,17 +12,12 @@ const PlayerAvatars = ({ players, onPlayerClick }) => {
           onClick={() => onPlayerClick(index)}
         >
           <Avatar
-            sx={{
-              bgcolor: player.color,
-              fontSize: '1.2rem',
-              width: 50,
-              height: 50,
-              cursor: 'pointer',
-            }}
+            className="player-avatar-circle"
+            style={{ backgroundColor: player.color }}
           >
             {player.name?.[0].toUpperCase()}
           </Avatar>
-          <span className="player-score">Score : {player.score ?? 0}</span>
+          <span className="player-score"> {player.score ?? 0}</span>
         </div>
       ))}
     </div>

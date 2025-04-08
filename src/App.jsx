@@ -4,6 +4,7 @@ import QuoteCard from './components/QuoteCard/QuoteCard';
 import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
 import Podium from './components/Podium/Podium';
+import Footer from './components/Footer/Footer'
 import quotesData from '../public/data/quotes.json';
 import './App.scss';
 
@@ -78,27 +79,29 @@ function App() {
         difficulty={difficulty}
       />
       <h1>QUOTE MANIA 🎬</h1>
-      <div className="main-content">
+      <section className="main-content">
         {(players.length === 0 || !difficulty) ? (
-          <div className="game-warning">
+          <main className="game-warning">
             <p>⚠️ Veuillez configurer les joueurs et sélectionner une difficulté pour commencer la partie.</p>
-          </div>
+          </main>
         ) : (
           <>
-            <div className="quote-card-container">
+            <main className="quote-card-container">
               <QuoteCard quote={randomQuote} flipped={flipped} setFlipped={setFlipped} />
               <CustomButton onClick={changeQuote} label="Nouvelle citation" />
-            </div>
-            <div className="game-info">
-              <p>Difficulté : {difficultyName}</p>
+              <Podium players={players} />
+            </main>
+            <aside className="game-info">
+              <p>{difficultyName}</p>
               <PlayerAvatars players={players} onPlayerClick={handlePlayerClick} />
-            </div>
+            </aside>
           </>
         )}
-      </div>
-      <Podium players={players} />
+      </section>
+      <Footer />
     </div>
   );
+  
 }
 
 export default App;
