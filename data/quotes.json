@@ -1,0 +1,352 @@
+[
+  {
+    "citation": "Ce n’est pas parce que tu as la capacité de faire quelque chose que tu es obligé de le faire.",
+    "film": "Harry Potter et le Prisonnier d'Azkaban",
+    "personnage": "Dumbledore",
+    "annee": 2004,
+    "difficulte": 1
+  },
+  {
+    "citation": "Tu meurs en héros, ou tu vis assez longtemps pour te voir devenir le méchant.",
+    "film": "The Dark Knight",
+    "personnage": "Harvey Dent",
+    "annee": 2008,
+    "difficulte": 1
+  },
+  {
+    "citation": "Ce que nous faisons dans notre vie résonne dans l’éternité.",
+    "film": "Gladiator",
+    "personnage": "Maximus",
+    "annee": 2000,
+    "difficulte": 1
+  },
+  {
+    "citation": "Ne pense pas que c’est l’air que tu respires maintenant.",
+    "film": "Matrix",
+    "personnage": "Morpheus",
+    "annee": 1999,
+    "difficulte": 1
+  },
+  {
+    "citation": "L’amour est la seule chose qu’on perçoit qui transcende le temps et l’espace.",
+    "film": "Interstellar",
+    "personnage": "Dr Brand",
+    "annee": 2014,
+    "difficulte": 1
+  },
+  {
+    "citation": "La peur, c’est l’obscurité qui fait surgir la folie.",
+    "film": "Batman Begins",
+    "personnage": "Bruce Wayne",
+    "annee": 2005,
+    "difficulte": 1
+  },
+  {
+    "citation": "La vie, c’est comme une boîte de chocolats, on ne sait jamais sur quoi on va tomber.",
+    "film": "Forrest Gump",
+    "personnage": "Forrest Gump",
+    "annee": 1994,
+    "difficulte": 1
+  },
+  {
+    "citation": "Il est plus facile de ruiner un homme que de le réparer.",
+    "film": "Iron Man",
+    "personnage": "Tony Stark",
+    "annee": 2008,
+    "difficulte": 1
+  },
+  {
+    "citation": "Sois le changement que tu veux voir dans le monde.",
+    "film": "Gandhi",
+    "personnage": "Gandhi",
+    "annee": 1982,
+    "difficulte": 1
+  },
+  {
+    "citation": "Il y a des choses qu’on ne peut pas expliquer, elles n’ont pas besoin d’être expliquées.",
+    "film": "The Truman Show",
+    "personnage": "Truman Burbank",
+    "annee": 1998,
+    "difficulte": 1
+  },
+  {
+    "citation": "On ne peut pas vivre dans le passé. Le passé est un endroit où il est impossible de changer quoi que ce soit.",
+    "film": "Avengers: Endgame",
+    "personnage": "Steve Rogers",
+    "annee": 2019,
+    "difficulte": 1
+  },
+  {
+    "citation": "Quand vous regardez le ciel, vous réalisez que la réalité est bien plus complexe que ce que nous pouvons imaginer.",
+    "film": "Inception",
+    "personnage": "Dom Cobb",
+    "annee": 2010,
+    "difficulte": 1
+  },
+  {
+    "citation": "Vous ne pouvez pas revenir en arrière et changer le début, mais vous pouvez commencer où vous êtes et changer la fin.",
+    "film": "Les époux Dupont",
+    "personnage": "Jim Carrey",
+    "annee": 2004,
+    "difficulte": 1
+  },
+  {
+    "citation": "Le seul moyen de faire un excellent travail est d’aimer ce que vous faites.",
+    "film": "Steve Jobs",
+    "personnage": "Steve Jobs",
+    "annee": 2015,
+    "difficulte": 1
+  },
+  {
+    "citation": "L’homme qui n’a pas peur de mourir n’a pas peur de vivre.",
+    "film": "Braveheart",
+    "personnage": "William Wallace",
+    "annee": 1995,
+    "difficulte": 1
+  },
+  {
+    "citation": "Quand il n’y a plus de place dans l’enfer, les morts marchent sur la terre.",
+    "film": "Dawn of the Dead",
+    "personnage": "Peter",
+    "annee": 1978,
+    "difficulte": 1
+  },
+  {
+    "citation": "La victoire appartient à ceux qui persévèrent.",
+    "film": "Rocky",
+    "personnage": "Rocky Balboa",
+    "annee": 1976,
+    "difficulte": 1
+  },
+  {
+    "citation": "Je vais lui faire une offre qu’il ne pourra pas refuser.",
+    "film": "Le Parrain",
+    "personnage": "Don Vito Corleone",
+    "annee": 1972,
+    "difficulte": 1
+  },
+  {
+    "citation": "La vie est un cadeau, et il faut en profiter pleinement.",
+    "film": "The Pursuit of Happyness",
+    "personnage": "Chris Gardner",
+    "annee": 2006,
+    "difficulte": 1
+  },
+  {
+    "citation": "Le passé est un prologue.",
+    "film": "La Chute du Faucon Noir",
+    "personnage": "Colonel Sanders",
+    "annee": 2001,
+    "difficulte": 1
+  },
+  {
+    "citation": "Le monde est à nous, il suffit de le prendre.",
+    "film": "Le Loup de Wall Street",
+    "personnage": "Jordan Belfort",
+    "annee": 2013,
+    "difficulte": 1
+  },
+  {
+    "citation": "L’amour rend aveugle.",
+    "film": "Pretty Woman",
+    "personnage": "Vivian Ward",
+    "annee": 1990,
+    "difficulte": 1
+  },
+  {
+    "citation": "Le plus grand danger n’est pas celui de prendre un risque, mais celui de ne pas en prendre.",
+    "film": "The Social Network",
+    "personnage": "Mark Zuckerberg",
+    "annee": 2010,
+    "difficulte": 1
+  },
+  {
+    "citation": "Dans ce monde, il y a deux types de personnes : ceux qui parlent et ceux qui agissent.",
+    "film": "The Dark Knight",
+    "personnage": "Alfred",
+    "annee": 2008,
+    "difficulte": 1
+  },
+  {
+    "citation": "L’être humain a une grande capacité à être ce qu’il veut.",
+    "film": "A Beautiful Mind",
+    "personnage": "John Nash",
+    "annee": 2001,
+    "difficulte": 1
+  },
+  {
+    "citation": "Le courage, ce n'est pas l'absence de peur, mais la capacité de la vaincre.",
+    "film": "Harry Potter et le Prisonnier d'Azkaban",
+    "personnage": "Dumbledore",
+    "annee": 2004,
+    "difficulte": 2
+  },
+  {
+    "citation": "Dans l’obscurité, on ne peut voir que ce que l’on y trouve.",
+    "film": "The Dark Knight",
+    "personnage": "Harvey Dent",
+    "annee": 2008,
+    "difficulte": 2
+  },
+  {
+    "citation": "L'homme ne peut échapper à sa destinée, mais il peut encore choisir son attitude.",
+    "film": "Gladiator",
+    "personnage": "Maximus",
+    "annee": 2000,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le monde tel que nous le connaissons, ce n’est qu’un rêve, une illusion. Mais qu’est-ce que la vérité ?",
+    "film": "Matrix",
+    "personnage": "Morpheus",
+    "annee": 1999,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le temps est relatif, et il n’est jamais aussi précieux que quand il nous est volé.",
+    "film": "Interstellar",
+    "personnage": "Dr Brand",
+    "annee": 2014,
+    "difficulte": 2
+  },
+  {
+    "citation": "La seule véritable peur est celle de l’inconnu, et pourtant c’est là où l’on grandit.",
+    "film": "Batman Begins",
+    "personnage": "Bruce Wayne",
+    "annee": 2005,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le seul véritable échec est celui qui n’a pas d'impact sur ta vie.",
+    "film": "Forrest Gump",
+    "personnage": "Forrest Gump",
+    "annee": 1994,
+    "difficulte": 2
+  },
+  {
+    "citation": "Les gens veulent changer, mais ils ne veulent pas changer.",
+    "film": "Iron Man",
+    "personnage": "Tony Stark",
+    "annee": 2008,
+    "difficulte": 2
+  },
+  {
+    "citation": "L’essence même de la vie est de ne pas avoir toutes les réponses, mais de poser les bonnes questions.",
+    "film": "Gandhi",
+    "personnage": "Gandhi",
+    "annee": 1982,
+    "difficulte": 2
+  },
+  {
+    "citation": "L’illusion de la liberté est ce qui rend la vie si douloureuse.",
+    "film": "The Truman Show",
+    "personnage": "Truman Burbank",
+    "annee": 1998,
+    "difficulte": 2
+  },
+  {
+    "citation": "Nous sommes tous à la recherche de quelque chose de plus, mais rien de tout cela n’a d’importance si nous ne trouvons pas ce que nous cherchons.",
+    "film": "Avengers: Endgame",
+    "personnage": "Steve Rogers",
+    "annee": 2019,
+    "difficulte": 2
+  },
+  {
+    "citation": "Les rêves ne sont pas faits pour être compris. Ils sont faits pour être vécus.",
+    "film": "Inception",
+    "personnage": "Dom Cobb",
+    "annee": 2010,
+    "difficulte": 2
+  },
+  {
+    "citation": "On ne peut pas changer le passé, mais il faut se rappeler ce que l’on a appris de lui.",
+    "film": "Les époux Dupont",
+    "personnage": "Jim Carrey",
+    "annee": 2004,
+    "difficulte": 2
+  },
+  {
+    "citation": "L’art du travail ne réside pas dans le fait de comprendre ce qui est devant nous, mais dans l’application de ce qui est en nous.",
+    "film": "Steve Jobs",
+    "personnage": "Steve Jobs",
+    "annee": 2015,
+    "difficulte": 2
+  },
+  {
+    "citation": "La douleur est temporaire, l’héritage est éternel.",
+    "film": "Braveheart",
+    "personnage": "William Wallace",
+    "annee": 1995,
+    "difficulte": 2
+  },
+  {
+    "citation": "Les ténèbres sont là pour nous faire réaliser la beauté de la lumière.",
+    "film": "Dawn of the Dead",
+    "personnage": "Peter",
+    "annee": 1978,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le succès n’est pas une question de chance, mais de travail acharné.",
+    "film": "Rocky",
+    "personnage": "Rocky Balboa",
+    "annee": 1976,
+    "difficulte": 2
+  },
+  {
+    "citation": "La vérité ne peut être dissimulée éternellement. Elle finira toujours par éclater.",
+    "film": "Le Parrain",
+    "personnage": "Don Vito Corleone",
+    "annee": 1972,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le seul moyen de s’en sortir est de ne jamais abandonner.",
+    "film": "The Pursuit of Happyness",
+    "personnage": "Chris Gardner",
+    "annee": 2006,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le monde ne te doit rien, tu dois le saisir toi-même.",
+    "film": "La Chute du Faucon Noir",
+    "personnage": "Colonel Sanders",
+    "annee": 2001,
+    "difficulte": 2
+  },
+  {
+    "citation": "Les actions que nous choisissons de mener définissent qui nous sommes, pas notre passé.",
+    "film": "Le Loup de Wall Street",
+    "personnage": "Jordan Belfort",
+    "annee": 2013,
+    "difficulte": 2
+  },
+  {
+    "citation": "L’amour ne se justifie pas, il se vit.",
+    "film": "Pretty Woman",
+    "personnage": "Vivian Ward",
+    "annee": 1990,
+    "difficulte": 2
+  },
+  {
+    "citation": "Le risque est nécessaire pour la croissance, et c’est la seule manière de réellement vivre.",
+    "film": "The Social Network",
+    "personnage": "Mark Zuckerberg",
+    "annee": 2010,
+    "difficulte": 2
+  },
+  {
+    "citation": "Certains se contentent de vivre, d'autres choisissent d’agir.",
+    "film": "The Dark Knight",
+    "personnage": "Alfred",
+    "annee": 2008,
+    "difficulte": 2
+  },
+  {
+    "citation": "La quête de la vérité peut être longue et ardue, mais elle finit toujours par apporter la clarté.",
+    "film": "A Beautiful Mind",
+    "personnage": "John Nash",
+    "annee": 2001,
+    "difficulte": 2
+  }  
+]
