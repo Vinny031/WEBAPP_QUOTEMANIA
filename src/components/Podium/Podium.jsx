@@ -14,7 +14,7 @@ const Podium = ({ players }) => {
             <li key={index} className={`podium-item podium-item-${index + 1}`}>
               <span className="podium-rank">{index + 1}</span>
               <span className="podium-player">{player.name}</span>
-              <span className="podium-score">{player.score} points</span>
+              <span className="podium-score">{player.score} pts</span>
             </li>
           ))}
         </ol>

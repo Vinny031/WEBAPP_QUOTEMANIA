@@ -10,10 +10,18 @@
 .player-avatar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 40px;
+  cursor: pointer;
+}
+
+.player-avatar-circle {
+  font-size: 18px !important;
+  width: 30px !important;
+  height: 30px !important;
+  cursor: pointer;
 }
 
 .player-score {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #333;
 }

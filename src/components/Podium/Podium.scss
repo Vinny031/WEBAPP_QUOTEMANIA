@@ -1,14 +1,13 @@
 .podium {
     background-color: #f7f7f7;
-    padding: 15px;
     border-radius: 8px;
-    text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 80vw;
-    max-width: 300px;
+    width: 100%;
+    padding: 10px;
   }
   
   .podium h2 {
+    font-size: 20px;
     margin-top: 0;
     color: #333;
   }
@@ -35,19 +34,19 @@
   }
   
   .podium-item-3 {
-    color: #cd7f32;
+    color: #b46515;
   }
   
   .podium-rank {
-    font-size: 1.5rem;
+    font-size: 14px;
     font-weight: bold;
   }
   
   .podium-player {
-    font-size: 1.2rem;
+    font-size: 14px;
   }
   
   .podium-score {
-    font-size: 1rem;
+    font-size: 14px;
   }
   
