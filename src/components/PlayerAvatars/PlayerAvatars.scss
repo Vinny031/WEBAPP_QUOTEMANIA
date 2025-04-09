@@ -16,12 +16,25 @@
 
 .player-avatar-circle {
   font-size: 18px !important;
-  width: 30px !important;
-  height: 30px !important;
+  width: 40px !important;
+  height: 40px !important;
   cursor: pointer;
 }
 
 .player-score {
   font-size: 14px;
   color: #333;
+}
+
+.penalty-button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px;
+
+  &:hover {
+    color: darkred;
+  }
 }

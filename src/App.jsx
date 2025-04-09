@@ -91,6 +91,16 @@ function App() {
     );
   };
 
+  const handlePlayerPenalty = (index) => {
+    setPlayers(prevPlayers =>
+      prevPlayers.map((player, i) =>
+        i === index
+          ? { ...player, score: Math.max(0, player.score - 1) }
+          : player
+      )
+    );
+  };
+
   const resetGame = () => {
     setPlayers([]);
     setDifficulty(null);
@@ -125,7 +135,10 @@ function App() {
             </main>
             <aside className="game-info">
               <p>{difficultyName}</p>
-              <PlayerAvatars players={players} onPlayerClick={handlePlayerClick} />
+              <PlayerAvatars players={players}
+              onPlayerClick={handlePlayerClick}
+              onPlayerPenalty={handlePlayerPenalty} 
+              />
             </aside>
           </>
         )}
