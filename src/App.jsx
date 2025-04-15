@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
+import Banner from './components/Banner/Banner';
 import QuoteCard from './components/QuoteCard/QuoteCard';
 import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
@@ -120,7 +121,7 @@ function App() {
         difficulty={difficulty}
         resetGame={resetGame}
       />
-      <h1>REMUE-MÉNINGES</h1>
+      <Banner title="REMUE MÉNINGES" subtitle="Faites chauffer vos méninges !" />
       <section className="main-content">
         {(players.length === 0 || !difficulty) ? (
           <main className="game-warning">
