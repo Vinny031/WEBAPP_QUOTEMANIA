@@ -109,7 +109,7 @@ function App() {
     localStorage.removeItem('randomQuote');
   };
 
-  if (!randomQuote) return <div>Loading...</div>;
+  if (!randomQuote) return <div>Chargement ...</div>;
 
   return (
     <div className="app">
@@ -120,7 +120,7 @@ function App() {
         difficulty={difficulty}
         resetGame={resetGame}
       />
-      <h1>QUOTE MANIA 🎬</h1>
+      <h1>REMUE-MÉNINGES 🎬</h1>
       <section className="main-content">
         {(players.length === 0 || !difficulty) ? (
           <main className="game-warning">
