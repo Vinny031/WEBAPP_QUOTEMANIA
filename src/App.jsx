@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
-import QuoteCard from './components/QuoteCard/QuoteCard';
+import QuestionCard from './components/QuestionCard/QuestionCard';
 import CustomButton from './components/CustomButton/CustomButton';
 import PlayerAvatars from './components/PlayerAvatars/PlayerAvatars';
 import Podium from './components/Podium/Podium';
 import Footer from './components/Footer/Footer';
-import quotesData from '../public/data/quotes.json';
+import questionsData from '../public/data/questions.json';
 import './App.scss';
 
 const difficultyLevels = [
@@ -18,26 +18,25 @@ const difficultyLevels = [
 ];
 
 function App() {
-  const [randomQuote, setRandomQuote] = useState(null);
+  const [randomQuestion, setRandomQuestion] = useState(null);
   const [flipped, setFlipped] = useState(false);
   const [players, setPlayers] = useState([]);
   const [difficulty, setDifficulty] = useState(null);
+  const [lastTheme, setLastTheme] = useState(null);
 
-  // Charger les données à partir du localStorage au démarrage
   useEffect(() => {
     const savedPlayers = JSON.parse(localStorage.getItem('players'));
     const savedDifficulty = localStorage.getItem('difficulty');
-    const savedQuote = JSON.parse(localStorage.getItem('randomQuote'));
+    const savedQuestion = JSON.parse(localStorage.getItem('randomQuestion'));
 
     if (savedPlayers) setPlayers(savedPlayers);
     if (savedDifficulty) setDifficulty(savedDifficulty);
-    if (savedQuote) setRandomQuote(savedQuote);
+    if (savedQuestion) setRandomQuestion(savedQuestion);
     else {
-      setRandomQuote(quotesData[Math.floor(Math.random() * quotesData.length)]);
+      setRandomQuestion(getRandomQuestion());
     }
   }, []);
 
-  // Sauvegarder les données dans le localStorage chaque fois qu'elles changent
   useEffect(() => {
     if (players.length > 0) {
       localStorage.setItem('players', JSON.stringify(players));
@@ -45,28 +44,38 @@ function App() {
     if (difficulty) {
       localStorage.setItem('difficulty', difficulty);
     }
-    if (randomQuote) {
-      localStorage.setItem('randomQuote', JSON.stringify(randomQuote));
+    if (randomQuestion) {
+      localStorage.setItem('randomQuestion', JSON.stringify(randomQuestion));
     }
-  }, [players, difficulty, randomQuote]);
+  }, [players, difficulty, randomQuestion]);
 
   const difficultyName = difficulty 
     ? difficultyLevels.find(level => level.value === difficulty)?.name 
     : 'Non définie';
 
-  const getRandomQuote = (currentQuote) => {
-    let newQuote;
-    do {
-      newQuote = quotesData[Math.floor(Math.random() * quotesData.length)];
-    } while (newQuote.citation === currentQuote?.citation);
-    return newQuote;
-  };
+  const getRandomTheme = useCallback(() => {
+    const availableThemes = questionsData.filter(theme => theme.theme !== lastTheme);
+    const randomTheme = availableThemes[Math.floor(Math.random() * availableThemes.length)];
+    setLastTheme(randomTheme.theme);
+    return randomTheme;
+  }, [lastTheme]);
 
-  const changeQuote = () => {
+  const getRandomQuestion = useCallback(() => {
+    const randomTheme = getRandomTheme();
+    const randomQuestion = randomTheme.questions[Math.floor(Math.random() * randomTheme.questions.length)];
+
+    return {
+      ...randomQuestion,
+      theme: randomTheme.theme,
+      couleur: randomTheme.couleur
+    };
+  }, [getRandomTheme]);
+
+  const changeQuestion = () => {
     setFlipped(false);
-    const newQuote = getRandomQuote(randomQuote);
     setTimeout(() => {
-      setRandomQuote(newQuote);
+      const newQuestion = getRandomQuestion();
+      setRandomQuestion(newQuestion);
     }, 400);
   };
 
@@ -105,12 +114,13 @@ function App() {
   const resetGame = () => {
     setPlayers([]);
     setDifficulty(null);
+    setLastTheme(null);
     localStorage.removeItem('players');
     localStorage.removeItem('difficulty');
-    localStorage.removeItem('randomQuote');
+    localStorage.removeItem('randomQuestion');
   };
 
-  if (!randomQuote) return <div>Chargement ...</div>;
+  if (!randomQuestion) return <div>Chargement ...</div>;
 
   return (
     <div className="app">
@@ -129,16 +139,21 @@ function App() {
           </main>
         ) : (
           <>
-            <main className="quote-card-container">
-              <QuoteCard quote={randomQuote} flipped={flipped} setFlipped={setFlipped} />
-              <CustomButton onClick={changeQuote} label="Nouvelle citation" />
+            <main className="question-card-container">
+              <QuestionCard
+                question={randomQuestion}
+                flipped={flipped}
+                setFlipped={setFlipped}
+              />
+              <CustomButton onClick={changeQuestion} label="Nouvelle question" />
               <Podium players={players} />
             </main>
             <aside className="game-info">
               <p>{difficultyName}</p>
-              <PlayerAvatars players={players}
-              onPlayerClick={handlePlayerClick}
-              onPlayerPenalty={handlePlayerPenalty} 
+              <PlayerAvatars
+                players={players}
+                onPlayerClick={handlePlayerClick}
+                onPlayerPenalty={handlePlayerPenalty}
               />
             </aside>
           </>
