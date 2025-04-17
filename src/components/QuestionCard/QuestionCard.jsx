@@ -11,28 +11,33 @@ const QuestionCard = ({ question, flipped, setFlipped }) => {
   }, [question, setFlipped]);
 
   return (
-    <div className={`question-card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>
-      <div className="question-card-inner">
-        {/* Partie avant de la carte - Question */}
-        <div className="question-card-face question-card-front">
-          <div
-            className="question-card-theme-tag"
-            style={{ backgroundColor: mapColor(question.couleur) }}
-          >
-            {question.theme}
-          </div>
-          <p>{question.question}</p>
-        </div>
-
-        {/* Partie arrière de la carte - Réponse */}
-        <div
-          className="question-card-face question-card-back"
-          style={{ backgroundColor: mapColor(question.couleur) }}
-        >
-          <p>{question.reponse}</p>
-        </div>
+<div className={`question-card ${flipped ? 'flipped' : ''}`} onClick={handleClick}>
+  <div className="question-card-inner">
+    {/* Partie avant de la carte - Question */}
+    <div className="question-card-face question-card-front">
+      <div
+        className="question-card-theme-tag"
+        style={{ backgroundColor: mapColor(question.couleur) }}
+      >
+        {question.theme}
       </div>
+      <p>{question.question}</p>
     </div>
+
+    {/* Partie arrière de la carte - Réponse */}
+    <div
+      className="question-card-face question-card-back"
+      style={{
+        backgroundImage: `url(${question.img})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <p>{question.reponse}</p>
+    </div>
+  </div>
+</div>
+
   );
 };
 

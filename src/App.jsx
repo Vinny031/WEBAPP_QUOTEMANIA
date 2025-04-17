@@ -67,7 +67,8 @@ function App() {
     return {
       ...randomQuestion,
       theme: randomTheme.theme,
-      couleur: randomTheme.couleur
+      couleur: randomTheme.couleur,
+      img: randomTheme.img
     };
   }, [getRandomTheme]);
 

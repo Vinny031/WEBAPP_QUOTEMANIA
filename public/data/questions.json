@@ -2,6 +2,7 @@
     {
     "theme": "Géographie",
     "couleur": "Bleu",
+    "img": "../assets/G.webp",
     "questions": [
         {"question": "Quelle est la capitale de la France ?", "reponse": "Paris"},
         {"question": "Quel est le plus grand désert du monde ?", "reponse": "Sahara"},
@@ -104,6 +105,7 @@
 {
     "theme": "Divertissement",
     "couleur": "Rose",
+    "img": "../assets/D.webp",
     "questions": [
         {"question": "Quel film a remporté l'Oscar du meilleur film en 1994 ?", "reponse": "Forrest Gump"},
         {"question": "Qui a joué le rôle de Jack Dawson dans Titanic ?", "reponse": "Leonardo DiCaprio"},
@@ -168,6 +170,7 @@
 {
     "theme": "Histoire",
     "couleur": "Jaune",
+    "img": "../assets/H.webp",
     "questions": [
         {"question": "Qui était le premier président des États-Unis ?", "reponse": "George Washington"},
         {"question": "En quelle année a eu lieu la Révolution française ?", "reponse": "1789"},
@@ -230,6 +233,7 @@
 {
     "theme": "Art et littérature",
     "couleur": "Violet",
+    "img": "../assets/AL.webp",
     "questions": [
         {"question": "Qui a peint la Mona Lisa ?", "reponse": "Leonard de Vinci"},
         {"question": "Quel écrivain a écrit 'Les Misérables' ?", "reponse": "Victor Hugo"},
@@ -294,6 +298,7 @@
 {
     "theme": "Sciences et nature",
     "couleur": "Vert",
+    "img": "../assets/SN.webp",
     "questions": [
         {"question": "Quelle est la molécule porteuse de l'information génétique ?", "reponse": "ADN"},
         {"question": "Quel est l'élément chimique symbolisé par 'O' ?", "reponse": "Oxygène"},
@@ -363,6 +368,7 @@
 {
     "theme": "Sports et loisirs",
     "couleur": "Orange",
+    "img": "../assets/SL.webp",
     "questions": [
         {"question": "Quel est le sport le plus populaire au monde ?", "reponse": "Football"},
         {"question": "Quel pays a remporté la Coupe du Monde de la FIFA 2018 ?", "reponse": "France"},
