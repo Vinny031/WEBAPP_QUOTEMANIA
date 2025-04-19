@@ -10,12 +10,32 @@ const colors = [
   '#2196f3', '#1976d2', '#ba68c8', '#9c27b0', '#bdbdbd', '#616161', '#000000'
 ];
 
+const themes = [
+  {
+    value: 'culture',
+    label: 'Culture Générale',
+    image: '/assets/banner_theme/banner_culture.webp',
+  },
+  {
+    value: 'disney',
+    label: 'Disney',
+    image: '/assets/banner_theme/banner_disney.webp',
+  },
+  {
+    value: 'quote',
+    label: 'Citations de films',
+    image: '/assets/banner_theme/banner_quote.webp',
+  }
+];
+
+
 const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
   const [players, setPlayers] = useState([
     { name: '', color: colors[0] },
     { name: '', color: colors[1] },
   ]);
   const [difficulty, setDifficulty] = useState('');
+  const [theme, setTheme] = useState('');
 
   const handleChange = (index, field, value) => {
     const updatedPlayers = [...players];
@@ -46,10 +66,20 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
     }
   };
 
+  const handleThemeChange = (event) => {
+    setTheme(event.target.value);
+  };  
+
   const handleSubmit = () => {
     // Vérification si tous les joueurs ont un pseudo
     if (players.some(player => player.name.trim() === '')) {
       alert("Tous les pseudos doivent être remplis.");
+      return;
+    }
+
+    // Vérification si un thème a été sélectionné
+    if (!theme) {
+      alert("Veuillez sélectionner un thème.");
       return;
     }
 
@@ -60,7 +90,7 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
     }
 
     // Soumettre les données
-    onSubmit(players, difficulty);
+    onSubmit(players, difficulty, theme);
     onDifficultyChange(difficulty);
     onClose();
   };
@@ -69,7 +99,36 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
     <Modal open={open} onClose={onClose}>
       <Box className="modal-box">
         <div className="modal-header">
-          <h2 className='modal-title'>Qui c'est qui joue ?</h2>
+          <h2 className='modal-title'>Mode de jeux</h2>
+          <FormControl fullWidth className="theme-select-wrapper">
+            <InputLabel id="theme-label">Thème</InputLabel>
+            <Select
+              labelId="theme-label"
+              id="theme-select"
+              value={theme}
+              label="Thème"
+              onChange={handleThemeChange}
+              sx={{
+                backgroundImage: theme
+                  ? `url(${themes.find(t => t.value === theme)?.image})`
+                  : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                color: theme ? '#fff' : 'inherit',
+                fontWeight: 'bold',
+                '& .MuiSelect-select': {
+                  backgroundColor: 'rgba(0,0,0,0.4)',
+                }
+              }}
+            >
+              {themes.map((themeOption) => (
+                <MenuItem key={themeOption.value} value={themeOption.value}>
+                  {themeOption.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
           <FormControl fullWidth>
             <InputLabel id="difficulty-label">Difficulté</InputLabel>
             <Select
@@ -88,6 +147,7 @@ const PartySetupModal = ({ open, onClose, onSubmit, onDifficultyChange }) => {
           </FormControl>
         </div>
 
+        <h2 className='modal-title'>Qui c'est qui joue ?</h2>
         {players.map((player, index) => (
           <div key={index} className="player-row">
             <TextField
