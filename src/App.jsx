@@ -23,6 +23,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [difficulty, setDifficulty] = useState(null);
   const [lastTheme, setLastTheme] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     const savedPlayers = JSON.parse(localStorage.getItem('players'));
@@ -93,16 +94,25 @@ function App() {
   };
 
   const handlePlayerClick = (index) => {
-    setPlayers(prevPlayers => 
-      prevPlayers.map((player, i) => 
-        i === index 
-          ? { ...player, score: player.score + 1 } 
-          : player
-      )
-    );
+    if (gameOver) return;
+  
+    setPlayers(prevPlayers => {
+      const updatedPlayers = prevPlayers.map((player, i) =>
+        i === index ? { ...player, score: player.score + 1 } : player
+      );
+  
+      const winner = updatedPlayers.find(player => player.score >= 10);
+      if (winner) {
+        setGameOver(true);
+      }
+  
+      return updatedPlayers;
+    });
   };
 
   const handlePlayerPenalty = (index) => {
+    if (gameOver) return;
+  
     setPlayers(prevPlayers =>
       prevPlayers.map((player, i) =>
         i === index
@@ -116,11 +126,12 @@ function App() {
     setPlayers([]);
     setDifficulty(null);
     setLastTheme(null);
+    setGameOver(false);
     localStorage.removeItem('players');
     localStorage.removeItem('difficulty');
     localStorage.removeItem('randomQuestion');
   };
-
+  
   if (!randomQuestion) return <div>Chargement ...</div>;
 
   return (
