@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const savedPlayers = JSON.parse(localStorage.getItem('players'));
-    const savedDifficulty = localStorage.getItem('difficulty');
+    const savedDifficulty = JSON.parse (localStorage.getItem('difficulty'));
     const savedQuestion = JSON.parse(localStorage.getItem('randomQuestion'));
 
     if (savedPlayers) setPlayers(savedPlayers);
